@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.Calendar {
+  border: 1px solid white;
+  margin: 7.5vh auto;
+  width: 75vw;
+  height: 85vh;
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 2px solid white;
+    h2 {
+      color: white;
+    }
+  }
+  .Days {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    
+    .Date {
+       border: 1px solid white;
+       width: 14%;
+       min-height: 25px;
+       color: white;
+       padding: 0;
+    }
+    .selectedElement {
+      color: red;
+    }
+  }
+}
