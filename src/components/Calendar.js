@@ -1,11 +1,10 @@
 import {useState} from 'react'
-import {Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 import {today, getDaysInMonth} from '../helpers/DateFunctions'
 
 const Calendar = () => {
   const history = useHistory();
-  // console.log(history)
   const [date, setDate] = useState(today)
   const [num, setNum] = useState(0)
 
@@ -30,7 +29,7 @@ const Calendar = () => {
         day: e.target.innerText * 1,
       }
     });
-    console.log(new Date(date.getFullYear(), date.getMonth(), (e.target.innerText * 1)))
+    // console.log(new Date(date.getFullYear(), date.getMonth(), (e.target.innerText * 1)))
   }
   
   const thisMonth = getDaysInMonth(date.getMonth(), date.getFullYear())

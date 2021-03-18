@@ -1,6 +1,6 @@
 import { HashRouter, Route } from 'react-router-dom'
 import Calendar from './Calendar'
-import Date from './Date'
+import DateView from './DateView'
 
 import '../assets/App.scss';
 
@@ -9,7 +9,7 @@ const App = () => {
     <HashRouter >
       <div className="App">
         <Route path='/' exact component={Calendar} />
-        <Route path='/date' component={Date} />
+        <Route path='/date' component={DateView} />
       </div>
     </HashRouter>
   );
