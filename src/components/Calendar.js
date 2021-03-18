@@ -26,7 +26,7 @@ const Calendar = () => {
       state: {
         year: date.getFullYear(),
         month: date.getMonth(),
-        day: e.target.innerText * 1,
+        day: e.target.innerText,
       }
     });
   }
@@ -35,7 +35,7 @@ const Calendar = () => {
   
   const displayThisMonthsDays = (thisMonth.map((elem) => {
     return (
-      <p key={elem} value={elem} className='Date' onClick={showDate}>{elem.getDate()}</p>
+      <p key={elem} value={elem} className='Date' onClick={showDate}>{elem.getDate().toString().padStart(2, "0")}</p>
     )
   }))
 
