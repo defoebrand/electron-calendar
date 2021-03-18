@@ -29,7 +29,6 @@ const Calendar = () => {
         day: e.target.innerText * 1,
       }
     });
-    // console.log(new Date(date.getFullYear(), date.getMonth(), (e.target.innerText * 1)))
   }
   
   const thisMonth = getDaysInMonth(date.getMonth(), date.getFullYear())
@@ -45,7 +44,6 @@ const Calendar = () => {
       <header>
       <button onClick={minusMonth}>-</button>
         <h2>{date.toLocaleString('default', { month: 'long' })}</h2>
-        <p style={{display: 'none'}}>{num}</p>
       <button onClick={plusMonth}>+</button>
       </header>
       <div className='Days'>

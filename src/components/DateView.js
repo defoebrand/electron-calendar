@@ -7,10 +7,10 @@ const DateView = (props) => {
 
   const history = useHistory();
   return (
-    <>
-    <h1 style={{color: 'white'}}>{today.toString()}</h1>
-    <button onClick={() => history.push('/')}>Go Back</button>
-    </>
+    <div className='DateView'>
+      <h2>{today.toString()}</h2>
+      <button onClick={() => history.push('/')}>Go Back</button>
+    </div>
   );
 }
 
