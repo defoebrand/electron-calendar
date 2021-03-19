@@ -2,6 +2,9 @@ import {useState, useEffect} from 'react'
 import {useHistory, useLocation} from 'react-router-dom'
 
 import TimeNow from './TimeNow'
+import {students} from '../assets/data/Students'
+
+console.log(students)
 
 
 const DateView = (props) => {
@@ -25,7 +28,7 @@ const DateView = (props) => {
         appt_time  : null
     )).map(appt_time => (
       <div key={appt_time.id}>
-        <p style={{color: 'white'}}>{appt_time.time.split('T')[1].split('.0')[0]}</p>
+        <p style={{color: 'white'}}>{`${appt_time.time.split('T')[1].split('.0')[0]}: ${students[appt_time.student_id]}`}</p>
         <p style={{color: 'white'}}>{appt_time.notes}</p>
       </div>
     ))}

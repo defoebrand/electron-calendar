@@ -1,7 +1,11 @@
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 
+import TimeNow from './TimeNow'
+
 import {today, getDaysInMonth} from '../helpers/DateFunctions'
+
+
 
 const Calendar = () => {
   const history = useHistory();
@@ -41,6 +45,7 @@ const Calendar = () => {
 
   return (
     <div className="Calendar">
+          <h2 style={{color: 'white'}}>{<TimeNow year={date.getFullYear()} month={date.getMonth()} day={date.getDate().toString().padStart(2, "0")}/>}</h2>
       <header>
       <button onClick={minusMonth}>-</button>
         <h2>{date.toLocaleString('default', { month: 'long' })}</h2>
