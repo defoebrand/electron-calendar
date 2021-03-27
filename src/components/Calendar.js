@@ -37,9 +37,17 @@ const Calendar = () => {
   
   const thisMonth = getDaysInMonth(date.getMonth(), date.getFullYear())
   
-  const displayThisMonthsDays = (thisMonth.map((elem) => {
+  const displayDays = (['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'].map(day => {
     return (
-      <p key={elem} value={elem} className='Date' onClick={showDate}>{elem.getDate().toString().padStart(2, "0")}</p>
+      <p key={day} value={day} className='DayOfWeek'>{day}</p>
+    )
+  }))
+  
+  const displayThisMonthsDays = (thisMonth.map(elem => {
+    return (
+      today.getDate() === elem.getDate() ? 
+      <p key={elem} value={elem} className='Date CurrentDay' onClick={showDate}>{elem.getDate().toString().padStart(2, "0")}</p> :
+      <p key={elem} value={elem} className='Date' onClick={showDate}>{elem.getDate().toString().padStart(2, "0")}</p> 
     )
   }))
 
@@ -52,6 +60,7 @@ const Calendar = () => {
       <button onClick={plusMonth}>+</button>
       </header>
       <div className='Days'>
+        {displayDays}
         {displayThisMonthsDays}
       </div>
     </div>

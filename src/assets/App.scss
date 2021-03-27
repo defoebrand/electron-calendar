@@ -17,19 +17,31 @@
     }
   }
   .Days {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    grid-gap: 10px;
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%; 
+    padding: 0 10px;
+    
+    .DayOfWeek {
+      min-height: 25px;
+      color: white;
+      padding: 0;
+      margin-bottom: 0;
+    }
     
     .Date {
        border: 1px solid white;
-       width: 14%;
        min-height: 25px;
+       line-height: 25px;
        color: white;
-       padding: 0;
+       padding: 5px;
+       margin: 0;
     }
-    .selectedElement {
+    
+    .CurrentDay {
       color: red;
     }
   }
